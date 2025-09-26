@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neural Hand Recognition - Web3 AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Background Grid -->
+  <div class="grid-background"></div>
+  
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <h1 class="main-title">
+        <span class="gradient-text">Neural Hand</span>
+        <span class="recognition-text">Recognition</span>
+      </h1>
+      <p class="subtitle">Powered by AI • Web3 Technology • Real-time Detection</p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="container">
+      
+      <!-- Camera Section -->
+      <div class="camera-section">
+        <div class="camera-container">
+          <!-- Hidden video element -->
+          <video id="video" playsinline autoplay muted style="display:none" width="640" height="480"></video>
+          
+          <!-- Main canvas display -->
+          <canvas id="outputCanvas" width="640" height="480"></canvas>
+          
+          <!-- Camera overlay effects -->
+          <div class="camera-overlay">
+            <div class="scan-line"></div>
+            <div class="corner corner-tl"></div>
+            <div class="corner corner-tr"></div>
+            <div class="corner corner-bl"></div>
+            <div class="corner corner-br"></div>
+          </div>
+        </div>
+
+        <!-- Control Panel -->
+        <div class="control-panel">
+          <button id="toggleCamera" class="btn-primary">
+            <span class="btn-icon">⏸️</span>
+            <span class="btn-text">Stop Camera</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Detection Display -->
+      <div class="detection-section">
+        <div class="detection-panel">
+          <div class="panel-header">
+            <h3>🧠 AI Detection</h3>
+            <div class="status-indicator active"></div>
+          </div>
+          <div id="output" class="gesture-output">Ready...</div>
+          <div class="confidence-bar">
+            <div class="confidence-fill"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Gesture Guide Sidebar -->
+  <div class="gesture-guide">
+    <div class="guide-header">
+      <h3>🖐️ Gesture Commands</h3>
+    </div>
+    <div class="guide-content">
+      <div class="gesture-item">
+        <div class="gesture-icon">1️⃣</div>
+        <div class="gesture-info">
+          <span class="gesture-name">NAMA</span>
+          <span class="gesture-desc">One finger up</span>
+        </div>
+      </div>
+      <div class="gesture-item">
+        <div class="gesture-icon">2️⃣</div>
+        <div class="gesture-info">
+          <span class="gesture-name">SAYA</span>
+          <span class="gesture-desc">Peace sign</span>
+        </div>
+      </div>
+      <div class="gesture-item">
+        <div class="gesture-icon">3️⃣</div>
+        <div class="gesture-info">
+          <span class="gesture-name">SYAMSA</span>
+          <span class="gesture-desc">Three fingers</span>
+        </div>
+      </div>
+      <div class="gesture-item">
+        <div class="gesture-icon">4️⃣</div>
+        <div class="gesture-info">
+          <span class="gesture-name">AL</span>
+          <span class="gesture-desc">Four fingers</span>
+        </div>
+      </div>
+      <div class="gesture-item">
+        <div class="gesture-icon">5️⃣</div>
+        <div class="gesture-info">
+          <span class="gesture-name">HADI</span>
+          <span class="gesture-desc">Open palm</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tech Stats Panel -->
+  <div class="stats-panel">
+    <div class="stat-item">
+      <div class="stat-value" id="fps">60</div>
+      <div class="stat-label">FPS</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value" id="latency">12</div>
+      <div class="stat-label">MS</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value" id="accuracy">98</div>
+      <div class="stat-label">%</div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
