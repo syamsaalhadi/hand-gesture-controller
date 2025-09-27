@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Neural Hand Recognition - Web3 AI</title>
+  <title>Neural Hand Recognition - Customizable</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -20,9 +20,46 @@
         <span class="gradient-text">Neural Hand</span>
         <span class="recognition-text">Recognition</span>
       </h1>
-      <p class="subtitle">Powered by AI • Web3 Technology • Real-time Detection</p>
+      <p class="subtitle">Customizable • AI-Powered • Real-time Detection</p>
     </div>
   </header>
+
+  <!-- Settings Panel -->
+  <div class="settings-panel" id="settingsPanel">
+    <div class="settings-header">
+      <h3>⚙️ Gesture Settings</h3>
+      <button class="settings-toggle" id="settingsToggle">✕</button>
+    </div>
+    <div class="settings-content">
+      <div class="setting-group">
+        <label for="gesture1">1️⃣ One Finger:</label>
+        <input type="text" id="gesture1" placeholder="Enter custom text..." maxlength="20">
+      </div>
+      <div class="setting-group">
+        <label for="gesture2">2️⃣ Two Fingers:</label>
+        <input type="text" id="gesture2" placeholder="Enter custom text..." maxlength="20">
+      </div>
+      <div class="setting-group">
+        <label for="gesture3">3️⃣ Three Fingers:</label>
+        <input type="text" id="gesture3" placeholder="Enter custom text..." maxlength="20">
+      </div>
+      <div class="setting-group">
+        <label for="gesture4">4️⃣ Four Fingers:</label>
+        <input type="text" id="gesture4" placeholder="Enter custom text..." maxlength="20">
+      </div>
+      <div class="setting-group">
+        <label for="gesture5">5️⃣ Five Fingers:</label>
+        <input type="text" id="gesture5" placeholder="Enter custom text..." maxlength="20">
+      </div>
+      <div class="settings-actions">
+        <button class="btn-save" id="saveSettings">💾 Save Settings</button>
+        <button class="btn-reset" id="resetSettings">🔄 Reset Default</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Settings Button -->
+  <button class="settings-btn" id="openSettings">⚙️</button>
 
   <!-- Main Content -->
   <main class="main-content">
@@ -73,47 +110,13 @@
     </div>
   </main>
 
-  <!-- Gesture Guide Sidebar -->
+  <!-- Dynamic Gesture Guide Sidebar -->
   <div class="gesture-guide">
     <div class="guide-header">
-      <h3>🖐️ Gesture Commands</h3>
+      <h3>🖐️ Your Gestures</h3>
     </div>
-    <div class="guide-content">
-      <div class="gesture-item">
-        <div class="gesture-icon">1️⃣</div>
-        <div class="gesture-info">
-          <span class="gesture-name">NAMA</span>
-          <span class="gesture-desc">One finger up</span>
-        </div>
-      </div>
-      <div class="gesture-item">
-        <div class="gesture-icon">2️⃣</div>
-        <div class="gesture-info">
-          <span class="gesture-name">SAYA</span>
-          <span class="gesture-desc">Peace sign</span>
-        </div>
-      </div>
-      <div class="gesture-item">
-        <div class="gesture-icon">3️⃣</div>
-        <div class="gesture-info">
-          <span class="gesture-name">SYAMSA</span>
-          <span class="gesture-desc">Three fingers</span>
-        </div>
-      </div>
-      <div class="gesture-item">
-        <div class="gesture-icon">4️⃣</div>
-        <div class="gesture-info">
-          <span class="gesture-name">AL</span>
-          <span class="gesture-desc">Four fingers</span>
-        </div>
-      </div>
-      <div class="gesture-item">
-        <div class="gesture-icon">5️⃣</div>
-        <div class="gesture-info">
-          <span class="gesture-name">HADI</span>
-          <span class="gesture-desc">Open palm</span>
-        </div>
-      </div>
+    <div class="guide-content" id="gestureGuide">
+      <!-- Will be populated by JavaScript -->
     </div>
   </div>
 
